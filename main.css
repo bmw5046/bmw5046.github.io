@@ -1,181 +1,229 @@
-/*Variables*/
-$red: #ad0000;
-$lightBlack: #333;
-$darkGrey: #a9a9a9;
-$ghostWhite: #f8f8ff;
-$lightGrey: #d3d3d3;
+@charset "utf-8";
 
-/*Mixins*/
-@mixin transition($property) {transition: $property .25s;}
 
-/*Typography*/
-html {font: 16px 'Open Sans Condensed', 'Roboto Condensed', Verdana, sans-serif;}
-h1 {font-size: 2.25em;}
-h2 {font-size: 2em;}
-h3 {font-size: 1.75em;}
-h4 {font-size: 1.5em;}
-p {font-size: 1.25em;}
-/*Layout*/
-html,
-body {
-  width: 100%;
-  height: 100%;
-}
-body {color: #333;}
+
+/* BASE STYLES */
 *,
 *:before,
-*:after {box-sizing: border-box;}
-.line {
-  float: left;
-  width: 100%;
-  border-top: .25em solid $lightBlack;
+*:after
+{
+  box-sizing: border-box;
 }
-.wrapper {
-  margin: auto;
-  width: 60em;/*960px*/
-  /*min-height: 100%;*/
+
+body
+{
+  font-family: 'Open Sans', sans-serif;
+  background: #ededed;
+  font-weight: 300;
 }
-header,
-nav,
-section,
-footer {
-  float: left;
-  width: 100%;
-}
-a {
+
+a
+{
   text-decoration: none;
-  transition: color .25s;
 }
-.button {
-  display: block;
-  padding: .75em 1.25em;
-  font-size: 1em;
-  font-weight: bold;
-  text-transform: uppercase;
-  background: $red;
+
+.cc /* container */
+{
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+#header
+{
+  margin: 2rem 0;
+}
+
+#header > .cc
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+#logo
+{
+  display: flex;
+  align-items: center;
+}
+
+#logo .logo-over
+{
+  display: inline-block;
+  padding: 0.25em;
+  font-family: 'Oleo Script';
+  font-size: 3em;
+  border-radius: 0.25em;
+  background-color: #ff4486;
   color: #fff;
-  border: 0;
-  cursor: pointer;
-  &:focus,
-  &:hover {background: darken($red, 7%);}
-  &:active {background: #c10000;}
 }
-.link {
-  font-weight: bold;
-  color: $red;
-  &:focus,
-  &:hover {color: darken($red, 10%);}
-  &:active {color: lighten($red, 5%);}
+
+#logo .logo-under
+{
+  margin-left: 2em;
+  font-weight: 800;
+  color: #444;
 }
-/*Navigation*/
-nav h1 {
-  float: left;
-  padding: .25em .25em 0 0;
-  font-size: 4.5em;
-  text-transform: uppercase;
-}
-nav h1 a {color: $red;}
-.nav-ul {
+
+/* NAV */
+#nav > .c /* utility container class */
+{
   display: flex;
 }
-header li {width: 20%;}
-header li:not(:first-child) {margin-left: 2%;}
-header .nav-ul a {
-  display: block;
-  padding: 1.75em .5em;
-  font-size: 1.5em;
-  text-align: center;
-  text-transform: uppercase;
-  color: $lightBlack;
-  &:focus,
-  &:hover {color: $red;}
-  &:active {color: lighten($red, 5%);}
-}
-header li:first-child a {
-  background: $red;
-  color: #fff;
-  &:hover {color: #fff;}
-}
-/*Sections*/
-section {margin: 1em 0;}
-section h1 {text-transform: uppercase;}
-hr {
-  border-color: $lightGrey;
-  border-style: dashed;
-}
-.vertical {
-  width: 0;
-  height: 10px;
-}
-/*Intro*/
-.sec-intro {position: relative;}
-.sec-intro img {
-  width: 100%;
-}
-.sec-intro h1 {
-  position: absolute;
-  bottom: .5em;
-  left: .5em;
-  padding: .5em;
-  background: rgba(0,0,0,.5);
-  color: #fff;
-}
-/*Boxes*/
-.box {
-  float: left;
-  padding: 1.5em 1em;
-  width: 25%;
-  height: 400px;
-  border-top: .1em solid $lightGrey;
-  border-bottom: .1em solid $lightGrey;
-  border-left: .1em solid $lightGrey;
-  @include transition(background);
-  &:focus,
-  &:hover {background: #f5f5f5;}
-}
-.box:last-child {border-right: .1em solid $lightGrey;}
-.box h1 {text-align: center;}
-.box p {
-  margin-top: 4em;
-  height: 6em;
-  text-align: justify;
-}
-.box .button {
-  margin: 4em auto;
-}
-/*Events*/
-.sec-events > h1 {margin-top: 1em;}
-.sec-events article {
-  float: left;
-  padding: 0 .25em;
-  width: 25%;
-  text-align: justify;
-}
-.sec-events article h1,
-.sec-events article p {
-  display: block;
-  margin: .5em 0;
-  padding: .25em 1em;
-  font-size: 110%;
-}
-.sec-events article a {float: right;padding-right: 1em;}
-.sec-events article h1 {font-weight: bold;text-align: center;}
 
-/*Footer*/
-footer {
-  padding: 2em 0;
+#nav li
+{
+  margin: 0 0.5rem;
+  font-weight: 800;
+}
+
+#nav a
+{
+  display: block;
+  padding: 0.6em;
+  border-radius: 10px;
+  color: #444;
+  transition: background 0.3s ease;
+}
+
+#nav a:hover
+{
+  background: #fff;
+}
+
+#nav li.active a
+{
+  background:  #0000ff;
+  color: #fff;
+}
+
+/* MAIN */
+#main
+{
+  line-height: 1.5;
+}
+
+/* BANNER */
+.banner
+{
+  line-height: 1.2;
+  margin: 2em 0;
+}
+
+.banner > .cc
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4em;
+  border-radius: 10px;
+  border-bottom: 3px solid #ddd;
+  background: #fff;
+}
+
+.banner .call
+{
+  width: 60%;
+}
+
+.banner h2
+{
+  margin-bottom: 0.3em;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #444;
+}
+
+.banner h3
+{
+  font-size: 2rem;
+  font-weight: 300;
+  color: #000000;
+}
+
+.banner .actions
+{
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+
+.banner .actions a
+{
+  display: block;
   width: 100%;
-  text-align: center;
-  background: $lightGrey;
+  margin: 0.2em 0;
+  padding: 0.5em;
+  font-weight: 800;
+  font-size: 2.25rem;
+  border-radius: 10px;
 }
-footer .nav-ul {justify-content: center;margin-bottom: 1em;}
-footer li:not(:first-child) {margin-left: .75em;}
-footer li:first-child a {color: $lightBlack;}
-footer a {
-  font-size: .8em;
-  font-weight: bold;
-  color: $darkGrey;
-  &:focus,
-  &:hover {color: $lightBlack;}
+
+.banner .actions a:first-child
+{
+  color: #fff;
+  background: #0090c5;
 }
-.copy {font-size: .80em;}
+
+.banner .actions a:last-child
+{
+  color: #696969;
+  background: #f1f1f1;
+}
+
+/* PANELS */
+.panels
+{
+  margin: 2rem 0;
+}
+
+.panels > .cc
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+.panel
+{
+  width: 30%;
+  background: #fff;
+  border-bottom: 3px solid #ddd;
+  border-radius: 10px;
+  line-height: 1.625;
+}
+
+.panel-content
+{
+  padding: 1.5em;
+}
+
+.panel h4
+{
+  font-weight: 800;
+}
+
+.panel .panel-thumbnail
+{
+  min-height: 300px;
+  background-size: cover;
+  background-position: center middle;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.panel:first-child .panel-thumbnail
+{
+  background-image: url(https://38.media.tumblr.com/f264b862a6bf8ba5b9f06bf8bf4ea635/tumblr_na0kcnVUoi1st5lhmo1_1280.jpg);
+}
+
+.panel:nth-child(2) .panel-thumbnail
+{
+  background-image: url(https://38.media.tumblr.com/2741d3e79ea3782f87c65c1e44b5f9fa/tumblr_na0kb0BLqR1st5lhmo1_1280.jpg);
+}
+
+.panel:last-child .panel-thumbnail
+{
+  background-image: url(https://38.media.tumblr.com/817b3ff5f5a288b2691725abeb3d1531/tumblr_na0k8dFafa1st5lhmo1_1280.jpg);
+}
