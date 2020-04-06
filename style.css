@@ -1,0 +1,81 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html {
+	height: 100%;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+	display: block;
+}
+body {
+	font: 12px/18px Arial, sans-serif;
+	height: 100%;
+}
+div.a {
+  font-size: 15px;
+}
+
+div.b {
+
+  font-size: large;
+}
+
+div.c {
+  font-size: 250%;
+}
+.wrapper {
+	width: 100%;
+	min-width: 1000px;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+}
+.tab {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+#background {
+    width: 30%; 
+    height: 100%; 
+    float: right;  
+}
+
+.sidestretch {
+    width:30%;
+    height:100%;
+}
+.stretch {
+    width: 100%;
+    height: 100%; 
+}
+
+.middle {
+	width: 100%;
+	position: relative;
+}
+.parent {
+display: grid;
+grid-template-columns: repeat(2, .2fr) repeat(6, .5fr) .4fr;
+grid-template-rows: 1fr .1fr 1fr repeat(5, .5fr) 1fr;
+grid-column-gap: 10px;
+grid-row-gap: 8px;
+}
+
+.div1 { grid-area: 1 / 2 / 10 / 3; }
+.div2 { grid-area: 1 / 4 / 2 / 6; }
+.div3 { grid-area: 1 / 6 / 2 / 8; }
+.div4 { grid-area: 3 / 3 / 4 / 9; }
+.div5 { grid-area: 4 / 3 / 5 / 4; }
+.div6 { grid-area: 4 / 4 / 5 / 5; }
+.div7 { grid-area: 4 / 5 / 5 / 6; }
+.div8 { grid-area: 4 / 6 / 5 / 7; }
+.div9 { grid-area: 4 / 7 / 5 / 8; }
+.div10 { grid-area: 4 / 8 / 5 / 9; }
+.div11 { grid-area: 5 / 3 / 6 / 9; }
+.div12 { grid-area: 6 / 4 / 7 / 8; }
+.div13 { grid-area: 7 / 4 / 8 / 8; }
+.div14 { grid-area: 8 / 4 / 9 / 8; }
+.div15 { grid-area: 9 / 3 / 10 / 9; }
+ 
